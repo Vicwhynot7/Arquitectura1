@@ -9,8 +9,7 @@
         <h:outputStylesheet library="css" name="styles.css"/>
     </h:head>
     <h:body>
-        <p class="titulo">Página de Confirmación</p>
-        
+
         <h:form>
         <p:panelGrid columns="2">
             <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
@@ -18,60 +17,60 @@
             </h:selectOneMenu>
         </p:panelGrid>
         </h:form>
-        
+
         <h:form class="centro">
-            
+
             <h:outputText style="text-align: center;" class="titulo" value="#{msg.provetitulo}"/>
         </h:form>
-        
+
         <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
             <p:graphicImage  library="imagenes" name="logo.png" />
- 
+
             <p:outputPanel>
                 <h:panelGrid columns="2" cellpadding="5">
                     <h:outputText value="#{msg.proveclave}" />
                     <h:outputText value="#{formP.clave}" style="font-weight: bold"/>
- 
+
                     <h:outputText value="#{msg.provenombre}" />
                     <h:outputText value="#{formP.nombre}" style="font-weight: bold"/>
- 
+
                     <h:outputText value="#{msg.provecalle}" />
                     <h:outputText value="#{formP.calle}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provenumero}" />
                     <h:outputText value="#{formP.numero}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provecolonia}" />
                     <h:outputText value="#{formP.colonia}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provecp}" />
                     <h:outputText value="#{formP.cp}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.proveciudad}" />
                     <h:outputText value="#{formP.ciudad}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.proveestado}" />
                     <h:outputText value="#{formP.estado}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provetelefono}" />
                     <h:outputText value="#{formP.telefono}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provefax}" />
                     <h:outputText value="#{formP.fax}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provecontacto}" />
                     <h:outputText value="#{formP.contacto}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.proverfc}" />
                     <h:outputText value="#{formP.rfc}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provecuenta}" />
                     <h:outputText value="#{formP.cuenta}" style="font-weight: bold"/>
-                    
+
                     <h:outputText value="#{msg.provetipo}" />
                     <h:outputText value="#{formP.tipo}" style="font-weight: bold"/>
-                    
-                    
+
+
                 </h:panelGrid>
             </p:outputPanel>
         </h:panelGrid>
@@ -79,9 +78,8 @@
             <br></br>
             <br></br>
             <br></br>
-            
+
         </h:form>
         <h:form class="centro"><h:commandButton class="boton" id="regresar" value="#{msg.proveregresar}" action="index" /></h:form>
     </h:body>
 </html>
-
