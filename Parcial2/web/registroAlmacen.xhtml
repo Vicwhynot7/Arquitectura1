@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- Jair Ignacio Gonzalez Gayosso-->
+    <h:head>
+        <title>Registration</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form class="centro">
+
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.ANo_almacen}"/>
+        </h:form>
+        <h:form style="padding-bottom: 20px;">
+            <!--  Ingresar los datos para la validacion -->
+            <div class="ui-grid ui-grid-responsive" style="padding-left: 25%;">
+
+                <!-- Ingrese la clave del proveedor-->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+
+                            <p:outputLabel value="#{msg.AId_operador}" for="Id_operador"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="Id_operador" required="true"
+                                         value="#{formA.IDoperador}" mask="9999" />
+                            <p:message for="Id_operador" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+
+                            <p:outputLabel value="#{msg.ANo_almacen}" for="No_almacen"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="No_almacen" required="true"
+                                         value="#{formA.noAlmacen}" mask="9999" />
+                            <p:message for="No_almacen" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+
+                            <p:outputLabel value="#{msg.AOperacion}" for="Operacion"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="Operacion" required="true"
+                                         value="#{formA.operacion}" label="" />
+                            <p:message for="Operacion" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+
+                            <p:outputLabel value="#{msg.AReferencia}" for="Referencia"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="Referencia" required="true"
+                                         value="#{formA.referencia}" mask="9999" />
+                            <p:message for="Referencia" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+
+                            <p:outputLabel value="#{msg.AProducto}" for="Producto"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="Producto" required="true"
+                                         value="#{formA.producto}" label="" />
+                            <p:message for="Producto" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+                
+                
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: left; width: 100px;">
+
+                            <p:outputLabel value="#{msg.Afecha}" for="Fecha"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="Fecha" required="true"
+                                         value="#{formA.fecha}" mask="99/99/99" />
+                            <p:message for="Fecha" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+             
+                
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: left; width: 100px;">
+
+                            <p:outputLabel value="#{msg.AHora}" for="Hora"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="Hora" required="true"
+                                         value="#{formA.hora}" mask="99:99" />
+                            <p:message for="Hora" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+                <h:commandButton class="boton" id="validar" value="#{msg.proveregistrar}" action="#{formA.registrar()}"/>
+
+
+            </div>
+        </h:form>
+        <h:form style="padding-left: 25%;"><h:commandButton class="boton" id="regresar" value="#{msg.provecancelar}" action="#{formP.index()}" /></h:form>
+
+
+
+
+
+    </h:body>
+</html>
+
