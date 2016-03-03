@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Confirmation Page</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        
+        
+        <h:form>
+        <p:panelGrid columns="2">
+            <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                <f:selectItems value="#{idiomaBean.lstPaises}"/>
+            </h:selectOneMenu>
+        </p:panelGrid>
+        </h:form>
+        
+        <h:form class="centro">
+            
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.emtitulo}"/>
+        </h:form>
+        
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+            <p:graphicImage  library="imagenes" name="logo.png" />
+ 
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="#{msg.emclave}" />
+                    <h:outputText value="#{formEM.clave}" style="font-weight: bold"/>
+ 
+                    <h:outputText value="#{msg.emnombre}" />
+                    <h:outputText value="#{formEM.nombre}" style="font-weight: bold"/>
+ 
+                    <h:outputText value="#{msg.emcalle}" />
+                    <h:outputText value="#{formEM.calle}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.emnumero}" />
+                    <h:outputText value="#{formEM.numero}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.emcp}" />
+                    <h:outputText value="#{formEM.cp}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.emciudad}" />
+                    <h:outputText value="#{formEM.ciudad}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.emestado}" />
+                    <h:outputText value="#{formEM.estado}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.emtelefono}" />
+                    <h:outputText value="#{formEM.telefono}" style="font-weight: bold"/>
+                
+                    
+                    <h:outputText value="#{msg.emnumseguro}" />
+                    <h:outputText value="#{formEM.numseguro}" style="font-weight: bold"/>
+                    
+                    
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
+        
+        <h:form class="centro"><h:commandButton class="boton" id="regresar" value="#{msg.emregresar}" action="index" /></h:form>
+    </h:body>
+</html>
+

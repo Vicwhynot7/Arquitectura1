@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- Jair Ignacio Gonzalez Gayosso-->
+    <h:head>
+        <title>Registration</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+        <p:panelGrid columns="2">
+            <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                <f:selectItems value="#{idiomaBean.lstPaises}"/>
+            </h:selectOneMenu>
+        </p:panelGrid>
+        </h:form>
+        
+        <h:form class="centro">
+            
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.msjEmpleados}"/>
+        </h:form>
+<h:form style="padding-bottom: 20px;">
+        <!--  Ingresar los datos para la validacion -->
+        <div class="ui-grid ui-grid-responsive" style="padding-left: 25%;">
+
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                
+                            <p:outputLabel value="#{msg.emclave}" for="clave"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="clave" required="true"
+                                         value="#{formEM.clave}" mask="(9999)" />
+                        <p:message for="clave" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+
+            
+            <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                    
+                            <p:outputLabel value="#{msg.emnombre}" for="nombre"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText style="width: 350px" id="nombre" label="Nombre" required="true"
+                                     value="#{formEM.nombre}" />
+                        <p:message for="nombre" />
+                    
+                        </p:column>
+                    </p:row>
+            </p:panelGrid>
+                
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">                  
+                        <!--  Calle -->
+                        <p:outputLabel value="#{msg.emcalle}" for="calle"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="calle" label="Calle" required="true"
+                                     value="#{formEM.calle}" />
+                        <p:message for="calle" />                        
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 100px;"> 
+                        
+                        <!-- Numero -->
+                        <p:outputLabel value="#{msg.emnumero}" for="numero"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 40px;" id="numero" label="Numero" required="true"
+                                         value="#{formEM.numero}" />
+                        <p:message for="numero" />
+                      
+                    
+                            </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+
+            <!-- Ingrese la colonia, cp -->
+            
+                <p:panelGrid>
+                    <p:row>
+                         
+                          
+                                          
+                        <p:column style="text-align: right; width: 100px;">
+                        <!-- CP -->
+                        <p:outputLabel value="#{msg.emcp}" for="cp"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask style="width: 50px;" id="cp" required="true"
+                                         value="#{formEM.cp}" mask="99999"/>
+                        <p:message for="cp" />
+                    </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+            <!-- Ingrese la ciudad, estado -->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                          <!--  ciudad -->
+                          <p:outputLabel value="#{msg.emciudad}" for="ciudad"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="ciudad" label="Ciudad" required="true"
+                                     value="#{formEM.ciudad}" />
+                        <p:message for="ciudad" />
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 100px;">
+                        <!-- Estado -->
+                        <p:outputLabel value="#{msg.emestado}" for="estado"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="estado" label="Estado" required="true"
+                                     value="#{formEM.estado}" />
+                        <p:message for="estado" />
+                    
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+            <!-- espacio -->
+            <div class="ui-grid-row">
+                  <h:form style="padding-bottom: 20px;">
+                      <p></p>
+                    </h:form>
+            </div>
+            
+       
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                          <!--  telefono -->
+                          <p:outputLabel value="#{msg.emtelefono}" for="telefono"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="telefono" required="true"
+                                         value="#{formEM.telefono}" mask="(999) 999-9999" />
+                        <p:message for="telefono" />
+                        </p:column>                    
+                                 </p:row>
+                       
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">     
+                          <!--  colonia -->
+                          <p:outputLabel value="#{msg.emnumseguro}" for="numseguro"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="colonia" label="numseguro" required="true"
+                                     value="#{formEM.numseguro}" />
+                        <p:message for="numseguro" />
+                        </p:column>   
+              </p:row>
+                </p:panelGrid>>
+
+               
+             
+        
+                </p:panelGrid>>
+            <!-- Validar-->
+            <!-- cambiar action para que se dirija a su segunda vista-->
+            
+            <h:commandButton class="boton" id="validar" value="#{msg.emregistrar}" action="#{formEM.registrar()}"/>
+            
+                        
+            </div>
+        </h:form>
+        <h:form style="padding-left: 25%;"><h:commandButton class="boton" id="regresar" value="#{msg.emcancelar}" action="#{formEM.index()}" /></h:form>
+
+
+
+
+
+
+
+    </h:body>
+</html>
+
