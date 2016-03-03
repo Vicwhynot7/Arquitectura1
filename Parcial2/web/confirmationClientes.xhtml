@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Confirmation Page</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+
+
+        <h:form>
+            <p:panelGrid columns="2">
+                <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                    <f:selectItems value="#{idiomaBean.lstPaises}"/>
+                </h:selectOneMenu>
+            </p:panelGrid>
+        </h:form>
+
+        <h:form class="centro">
+
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.provetitulo}"/>
+        </h:form>
+
+        <h:panelGrid columns="4" style="width:100%" columnClasses="logo,detail">
+            <p:graphicImage  library="imagenes" name="logo1.png" />
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="#{msg.CTargeta}" />
+                    <h:outputText value="#{formC.targeta}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cnombre}" />
+                    <h:outputText value="#{formC.nombre}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cdireccion}" />
+                    <h:outputText value="#{formC.direccion}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cedad}" />
+                    <h:outputText value="#{formC.edad}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Ccp}" />
+                    <h:outputText value="#{formC.cp}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cciudad}" />
+                    <h:outputText value="#{formC.ciudad}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cestado}" />
+                    <h:outputText value="#{formC.estado}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Ctelefono}" />
+                    <h:outputText value="#{formC.telefono}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cemail}" />
+                    <h:outputText value="#{formC.email}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Crfc}" />
+                    <h:outputText value="#{formC.rfc}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cpuntos}" />
+                    <h:outputText value="#{formC.puntos}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Ccantidad}" />
+                    <h:outputText value="#{formC.cantidad}" style="font-weight: bold"/>
+
+                    <h:outputText value="#{msg.Cemision}" />
+                    <h:outputText value="#{formC.femision}" style="font-weight: bold"/>
+
+
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+
+        <h:form class="centro"><h:commandButton class="boton" id="regresar" value="#{msg.proveregresar}" action="index" /></h:form>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registration</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="2">
+                <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                    <f:selectItems value="#{idiomaBean.lstPaises}"/>
+                </h:selectOneMenu>
+            </p:panelGrid>
+        </h:form>
+
+        <h:form class="centro">
+
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.msjClientes}"/>
+        </h:form>
+        <h:form style="padding-bottom: 20px;">
+            <!--  Ingresar los datos para la validacion -->
+            <div class="ui-grid ui-grid-responsive" style="padding-left: 25%;">
+
+                <!-- Este metodo sirve para ingresar el numero de targeta que se le asigan al cliente-->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+
+                            <p:outputLabel value="#{msg.CTargeta}" for="targeta"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="targeta" required="true"
+                                         value="#{formC.targeta}" mask="" />
+                            <p:message for="targeta" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- Ingrese el nombre del cliente en el recuadro -->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+
+                            <p:outputLabel value="#{msg.Cnombre}" for="nombre"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 400px" id="nombre" label="Nombre" required="true"
+                                         value="#{formC.nombre}" />
+                            <p:message for="nombre" />
+
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- Ingrese la direccion del cliente -->
+                <!-- Ingrese la edad del la persona que se va a registrar, solo son dos digitos -->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">                  
+                            <!--  Calle -->
+                            <p:outputLabel value="#{msg.Cdireccion}" for="direccion"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="direccion" label="Direccion" required="true"
+                                         value="#{formC.direccion}" />
+                            <p:message for="direccion" />                        
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 150px;"> 
+
+                            <!-- Numero -->
+                            <p:outputLabel value="#{msg.Cedad}" for="edad"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask style="width: 90px;" id="edad" mask="99" required="true"
+                                         value="#{formC.edad}" />
+                            <p:message for="edad" />
+
+
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- Ingrese la colonia, cp -->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">     
+                            <!-- CP -->
+                            <p:outputLabel value="#{msg.Ccp}" for="cp"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask style="width: 100px;" id="cp" required="true"
+                                         value="#{formC.cp}" mask="99999"/>
+                            <p:message for="cp" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- Ingrese la ciudad, estado -->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+                            <!--  ciudad -->
+                            <p:outputLabel value="#{msg.Cciudad}" for="ciudad"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="ciudad" label="Ciudad" required="true"
+                                         value="#{formC.ciudad}" />
+                            <p:message for="ciudad" />
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 150px;">
+                            <!-- Estado -->
+                            <p:outputLabel value="#{msg.Cestado}" for="estado"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="estado" label="Estado" required="true"
+                                         value="#{formC.estado}" />
+                            <p:message for="estado" />
+
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- espacio -->
+                <div class="ui-grid-row">
+                    <h:form style="padding-bottom: 70px;">
+                        <p></p>
+                    </h:form>
+                </div>
+
+                <!-- Ingrese la telefono, email -->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+                            <!--  Telefono del cliente -->
+                            <p:outputLabel value="#{msg.Ctelefono}" for="telefono"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="telefono" required="true"
+                                         value="#{formC.telefono}" mask="(999) 999-9999" />
+                            <p:message for="telefono" />
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 150px;">
+                            <!-- Ingresar el Email para contactar al cliente -->
+                            <p:outputLabel value="#{msg.Cemail}" for="email"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="email" required="true"
+                                         value="#{formC.email}" label="Email" />
+                            <p:message for="email" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+
+                <!-- Ingrese RFC-->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+                            <p:outputLabel value="#{msg.Crfc}" for="rfc"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="rfc" label="RFC" required="true"
+                                         value="#{formC.rfc}" />
+                            <p:message for="rfc" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- Ingrese los puntos con los que inicialmet e cuenta el cliente-->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+                            <p:outputLabel value="#{msg.Cpuntos}" for="puntos"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="puntos" required="true"
+                                         value="#{formC.puntos}" label="999999999" />
+                            <p:message for="puntos" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+
+                <!-- Ingrese la cantidad-->
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+                            <p:outputLabel value="#{msg.Ccantidad}" for="cantidad"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText id="cantidad" required="true"
+                                         value="#{formC.cantidad}" label="999999999" />
+                            <h:message for="cantidad"/>
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 150px;">
+                            <p:outputLabel value="#{msg.Cemision}" for="femision"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="femision" required="true"
+                                         value="#{formC.femision}" mask="99-99-99"/>
+                            <h:message for="femision"/>
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+                <!-- Validar-->
+                <!-- cambiar action para que se dirija a su segunda vista-->
+                
+        
+            <h:commandButton class="boton" id="validar" value="#{msg.proveregistrar}" action="#{formC.registrar()}"/>
+            </div>
+        </h:form>
+        <h:form style="padding-left: 25%;"><h:commandButton class="boton" id="regresar" value="#{msg.provecancelar}" action="#{formP.index()}" /></h:form>
+
+
+
+
+
+
+
+    </h:body>
+</html>
+
