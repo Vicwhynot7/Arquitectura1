@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Confirmation Page</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        
+        
+        <h:form>
+        <p:panelGrid columns="2">
+            <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                <f:selectItems value="#{idiomaBean.lstPaises}"/>
+            </h:selectOneMenu>
+        </p:panelGrid>
+        </h:form>
+        
+        <h:form class="centro">
+            
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.provetitulo}"/>
+        </h:form>
+        
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+            <p:graphicImage  library="imagenes" name="logo.png" />
+ 
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="#{msg.Sucid}" />
+                    <h:outputText value="#{formS.id}" style="font-weight: bold"/>
+ 
+                    <h:outputText value="#{msg.Sucnombre_de_emp}" />
+                    <h:outputText value="#{formS.nombre}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Succp}" />
+                    <h:outputText value="#{formS.cp}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Succiudad}" />
+                    <h:outputText value="#{formS.ciudad}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Sucestado}" />
+                    <h:outputText value="#{formS.estado}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Suctelefono}" />
+                    <h:outputText value="#{formS.telefono}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Sucfax}" />
+                    <h:outputText value="#{formS.fax}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Succontacto}" />
+                    <h:outputText value="#{formS.contacto}" style="font-weight: bold"/>
+                    
+                    <h:outputText value="#{msg.Sucrfc}" />
+                    <h:outputText value="#{formS.rfc}" style="font-weight: bold"/>
+                    
+                    
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
+        
+            <h:form class="centro"><h:commandButton class="boton" id="regresar" value="#{msg.proveregresar}" action="index" /></h:form>
+    </h:body>
+</html>

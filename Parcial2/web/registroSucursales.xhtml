@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+        <h:head>
+        <title>Registration</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+        <p:panelGrid columns="2">
+            <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                <f:selectItems value="#{idiomaBean.lstPaises}"/>
+            </h:selectOneMenu>
+        </p:panelGrid>
+        </h:form>
+        
+        <h:form class="centro">
+            
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.msjProveedores}"/>
+        </h:form>
+<h:form style="padding-bottom: 20px;">
+        <!--  Ingresar los datos para la validacion -->
+        <div class="ui-grid ui-grid-responsive" style="padding-left: 25%;">
+
+            <!-- Ingrese la clave del proveedor-->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                
+                            <p:outputLabel value="#{msg.Sucid}" for="id"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="id" required="true"
+                                         value="#{formS.id}" mask="(9999)" />
+                        <p:message for="id" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+
+            <!-- Ingrese el nombre del proveedor -->
+            
+            <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                    
+                            <p:outputLabel value="#{msg.Sucnombre_de_emp}" for="nombre_de_emp"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText style="width: 350px" id="nombre_de_emp" label="Nombre" required="true"
+                                     value="#{formS.nombre}" />
+                        <p:message for="nombre_de_emp" />
+                    
+                        </p:column>
+                    </p:row>
+            </p:panelGrid>
+                
+
+            <!-- Ingrese la direccion del proveedor -->
+            <!-- Ingrese la calle, numero -->
+            
+            
+
+            <!-- Ingrese la colonia, cp -->
+            
+                <p:panelGrid>
+                    <p:row>                   
+                        <p:column style="text-align: right; width: 100px;">
+                        <!-- CP -->
+                        <p:outputLabel value="#{msg.Succp}" for="cp"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask style="width: 50px;" id="cp" required="true"
+                                         value="#{formS.cp}" mask="99999"/>
+                        <p:message for="cp" />
+                    </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+            <!-- Ingrese la ciudad, estado -->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                          <!--  ciudad -->
+                          <p:outputLabel value="#{msg.Succiudad}" for="ciudad"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="ciudad" label="Ciudad" required="true"
+                                     value="#{formS.ciudad}" />
+                        <p:message for="ciudad" />
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 100px;">
+                        <!-- Estado -->
+                        <p:outputLabel value="#{msg.Sucestado}" for="estado"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="estado" label="Estado" required="true"
+                                     value="#{formS.estado}" />
+                        <p:message for="estado" />
+                    
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+            <!-- espacio -->
+            <div class="ui-grid-row">
+                  <h:form style="padding-bottom: 20px;">
+                      <p></p>
+                    </h:form>
+            </div>
+            
+            <!-- Ingrese la telefono, fax -->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                          <!--  telefono -->
+                          <p:outputLabel value="#{msg.Suctelefono}" for="telefono"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="telefono" required="true"
+                                         value="#{formS.telefono}" mask="(999) 999-9999" />
+                        <p:message for="telefono" />
+                        </p:column>                    
+                        <p:column style="text-align: right; width: 100px;">
+                        <!-- Fax -->
+                        <p:outputLabel value="#{msg.Sucfax}" for="fax"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="fax" required="true"
+                                     value="#{formS.fax}" mask="(999) 999-9999" />
+                        <p:message for="fax" />
+                    </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+            <!-- Ingrese la contacto -->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                          <!--  contacto -->
+                          <p:outputLabel value="#{msg.Succontacto}" for="contacto"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 350px;" id="contacto" label="Contacto" required="true"
+                                         value="#{formS.contacto}" />
+                        <p:message for="contacto" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+           
+            
+            <!-- Ingrese RFC-->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                            <p:outputLabel value="#{msg.Sucrfc}" for="rfc"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText id="rfc" label="RFC" required="true"
+                                     value="#{formS.rfc}" />
+                        <p:message for="rfc" />
+                    </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+             
+            
+
+        
+             
+        
+            <!-- Validar-->
+            <!-- cambiar action para que se dirija a su segunda vista-->
+            
+            <h:commandButton class="boton" id="validar" value="#{msg.proveregistrar}" action="#{formS.registrar()}"/>
+            
+                        
+            </div>
+        </h:form>
+        <h:form style="padding-left: 25%;"><h:commandButton class="boton" id="regresar" value="#{msg.provecancelar}" action="#{formP.index()}" /></h:form>
+
+
+
+
+
+
+
+    </h:body>
+</html>
