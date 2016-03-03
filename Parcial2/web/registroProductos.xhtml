@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- Jair Ignacio Gonzalez Gayosso-->
+    <h:head>
+        <title>Registration</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+        <p:panelGrid columns="2">
+            <h:selectOneMenu value="#{idiomaBean.localidad}" onchange="submit()" valueChangeListener="#{idiomaBean.localidadChanged}">
+                <f:selectItems value="#{idiomaBean.lstPaises}"/>
+            </h:selectOneMenu>
+        </p:panelGrid>
+        </h:form>
+          
+            <!-- espacio -->
+            <div class="ui-grid-row">
+                  <h:form style="padding-bottom: 20px;">
+                      <p></p>
+                    </h:form>
+            </div>
+        <h:form class="centro">
+            
+            <h:outputText style="text-align: center;" class="titulo" value="#{msg.msjProductos}"/>
+        </h:form>
+<h:form style="padding-bottom: 20px;">
+        <!--  Ingresar los datos para la validacion -->
+        <div class="ui-grid ui-grid-responsive" style="padding-left: 25%;">
+
+            <!-- Ingrese la clave del producto-->
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                
+                            <p:outputLabel value="#{msg.prodclave}" for="clave"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="clave" required="true"
+                                         value="#{formProducto.clave}" mask="(9999)" />
+                        <p:message for="clave" />
+                        </p:column>
+                        
+                        <p:column style="text-align: right; width: 100px;">
+                
+                            <p:outputLabel value="#{msg.prodcodigo}" for="codigo"/> 
+                        </p:column>
+                        <p:column>
+                            <p:inputMask id="codigo" required="true"
+                                         value="#{formProducto.codigo}" mask="(999999999999)" />
+                        <p:message for="codigo" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+
+            <!-- Ingrese el nombre del producto -->
+            
+            <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                    
+                           
+                    
+                        </p:column>
+                        <p:column style="text-align: right; width: 325px;">
+                    
+                            <p:outputLabel value="#{msg.prodnombre}" for="nombre"/>
+                        </p:column>
+                        <p:column>
+                        <p:inputText style="width: 350px" id="nombre" label="Nombre" required="true"
+                                     value="#{formProducto.nombre}" />
+                        <p:message for="nombre" />
+                    
+                        </p:column>
+                    </p:row>
+            </p:panelGrid>
+                
+
+            <!-- Ingrese la talla marca y precio -->
+       
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">                  
+                        <!--  talla-->
+                         <p:outputLabel value="#{msg.prodtalla}" for="talla"/>
+                            </p:column>
+                        <p:column>
+                            <p:selectOneMenu id="talla" value="#{formProducto.talla}" style="width:200px">
+                                <f:selectItem itemLabel="#{msg.proveseleccione}" itemValue="" />
+                                <f:selectItem itemLabel="#{msg.prod1}" itemValue="CH" />
+                                <f:selectItem itemLabel="#{msg.prod2}" itemValue="M" />
+                                <f:selectItem itemLabel="#{msg.prod3}" itemValue="G" />
+                                <f:selectItem itemLabel="#{msg.prod3}" itemValue="XL" />
+                            </p:selectOneMenu>
+                            <h:message for="talla"/>
+                        
+                        
+                            </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+
+   
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">     
+                          
+                         <!-- marca -->
+                        <p:outputLabel value="#{msg.prodmarca}" for="marca"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 350px;" id="marca" label="marca" required="true"
+                                         value="#{formProducto.marca}" />
+                        <p:message for="marca" />
+                      
+                     
+                    </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+           
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                           <!-- precio -->
+                        <p:outputLabel value="#{msg.prodprecio}" for="precio"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 350px;" id="precio" label="precio" required="true"
+                                         value="#{formProducto.precio}" />
+                        <p:message for="precio" />
+                    
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            
+            
+            <!-- espacio -->
+            <div class="ui-grid-row">
+                  <h:form style="padding-bottom: 20px;">
+                      <p></p>
+                    </h:form>
+            </div>
+            
+           
+            
+                <p:panelGrid>
+                    <p:row>
+                        <p:column style="text-align: right; width: 100px;">
+                        
+                           <p:outputLabel value="#{msg.prodprovedor}" for="provedor"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 350px;" id="provedor" label="provedor" required="true"
+                                         value="#{formProducto.provedor}" />
+                        <p:message for="provedor" />
+                    </p:column>
+                                         
+                        
+                    </p:row>
+                </p:panelGrid>
+                    <p:panelGrid>
+                    <p:row>
+               
+             <p:column style="text-align: right; width: 85px;">
+                           
+                           <p:outputLabel value="#{msg.proddescripcion}" for="des"/>
+                        </p:column>
+                        <p:column>
+                            <p:inputText style="width: 550px;" id="des" label="Descrición" required="true"
+                                         value="#{formProducto.descripcion}" />
+                        <p:message for="des" />
+                    </p:column>  
+               
+                    </p:row>
+                </p:panelGrid>
+            <!-- Validar-->
+            <!-- cambiar action para que se dirija a su segunda vista-->
+             <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <h:commandButton class="boton" id="validar" value="#{msg.prodregistrar}" action="#{formProducto.registrar()}"/>
+            
+                        
+            </div>
+        </h:form>
+        <h:form style="padding-left: 25%;"><h:commandButton class="boton" id="regresar" value="#{msg.prodcancelar}" action="#{formProducto.index()}" /></h:form>
+
+
+
+
+
+
+
+    </h:body>
+</html>
+
